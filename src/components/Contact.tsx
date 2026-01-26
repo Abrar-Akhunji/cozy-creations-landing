@@ -4,7 +4,7 @@ import { Phone, Instagram, Facebook, MapPin, ArrowRight } from "lucide-react";
 import darkYarnBg from "@/assets/dark-yarn-bg.jpg";
 
 const Contact = () => {
-  const whatsappNumber = "1234567890";
+  const whatsappNumber = "919586030292";
   const whatsappMessage = "Hello! I'd like to discuss a custom order.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -12,8 +12,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (234) 567-890",
-      link: "tel:+1234567890",
+      value: "+91 9586030292",
+      link: "tel:+919586030292",
     },
     {
       icon: Instagram,
