@@ -1,10 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 import heroYarnBg from "@/assets/hero-yarn-bg.jpg";
 import knittedAccessories from "@/assets/knitted-accessories.jpg";
 import WaveDivider from "./WaveDivider";
 
 const Hero = () => {
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const scrolled = window.scrollY;
+        const rate = scrolled * 0.4; // Subtle parallax speed
+        parallaxRef.current.style.transform = `translate3d(0, ${rate}px, 0)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const whatsappNumber = "1234567890"; // Replace with actual WhatsApp number
   const whatsappMessage = "Hello! I'm interested in your handmade crochet products.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -13,13 +29,20 @@ const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{
-        backgroundImage: `linear-gradient(rgba(251, 248, 244, 0.85), rgba(251, 248, 244, 0.85)), url(${heroYarnBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
     >
+      {/* Parallax Background */}
+      <div
+        ref={parallaxRef}
+        className="absolute inset-0 -z-10 will-change-transform"
+        style={{
+          backgroundImage: `linear-gradient(rgba(251, 248, 244, 0.85), rgba(251, 248, 244, 0.85)), url(${heroYarnBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "120%",
+          top: "-10%",
+        }}
+      />
+
       <div className="max-w-content mx-auto px-6 md:px-12 py-24 md:py-32 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Content */}
         <div className="space-y-6 md:space-y-8">
