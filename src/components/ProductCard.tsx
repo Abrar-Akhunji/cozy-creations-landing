@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 interface ProductCardProps {
   image: string;
@@ -7,8 +8,15 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ image, title, description }: ProductCardProps) => {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+
   return (
-    <Card className="group overflow-hidden rounded-2xl bg-card border-border shadow-card hover:shadow-hover transition-all duration-500">
+    <Card 
+      ref={ref}
+      className={`group overflow-hidden rounded-2xl bg-card border-border shadow-card hover:shadow-hover transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+      }`}
+    >
       <div className="grid md:grid-cols-2 gap-0">
         {/* Image */}
         <div className="relative h-64 md:h-80 overflow-hidden">

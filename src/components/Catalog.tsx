@@ -7,7 +7,7 @@ import mittensProduct from "@/assets/mittens-product.jpg";
 import darkYarnBg from "@/assets/dark-yarn-bg.jpg";
 
 const Catalog = () => {
-  const whatsappNumber = "1234567890";
+  const whatsappNumber = "919586030292";
   const whatsappMessage = "Hi! I'd like to know more about your crochet products.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
