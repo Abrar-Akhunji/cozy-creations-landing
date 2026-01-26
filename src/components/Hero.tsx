@@ -21,7 +21,7 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappNumber = "1234567890"; // Replace with actual WhatsApp number
+  const whatsappNumber = "919586030292";
   const whatsappMessage = "Hello! I'm interested in your handmade crochet products.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import artisanPortrait from "@/assets/artisan-portrait.jpg";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const AboutMe = () => {
+  const { ref: imageRef, isVisible: imageVisible } = useIntersectionObserver({ threshold: 0.2 });
+
   const storyCards = [
     {
       text: "Hi! I'm passionate about creating beautiful, handmade pieces that bring warmth and joy to people's lives. Every project I undertake is infused with love and dedication.",
@@ -31,25 +34,38 @@ const AboutMe = () => {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left - Story Cards */}
           <div className="space-y-6">
-            {storyCards.map((card, index) => (
-              <Card
-                key={index}
-                className="bg-card border-border rounded-2xl shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                }}
-              >
-                <CardContent className="p-8">
-                  <p className="text-foreground/90 leading-relaxed text-lg">
-                    {card.text}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            {storyCards.map((card, index) => {
+              const StoryCardWithObserver = () => {
+                const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+                return (
+                  <Card
+                    ref={ref}
+                    className={`bg-card border-border rounded-2xl shadow-card hover:shadow-hover transition-all duration-700 hover:-translate-y-1 ${
+                      isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                    }`}
+                    style={{
+                      transitionDelay: `${index * 150}ms`,
+                    }}
+                  >
+                    <CardContent className="p-8">
+                      <p className="text-foreground/90 leading-relaxed text-lg">
+                        {card.text}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              };
+              return <StoryCardWithObserver key={index} />;
+            })}
           </div>
 
           {/* Right - Portrait */}
-          <div className="relative">
+          <div 
+            ref={imageRef}
+            className={`relative transition-all duration-700 delay-200 ${
+              imageVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}
+          >
             <div className="relative rounded-3xl overflow-hidden shadow-hover">
               <img
                 src={artisanPortrait}

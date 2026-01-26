@@ -1,6 +1,7 @@
 import { LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import yarnBall from "@/assets/yarn-ball.jpg";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 interface FeatureCardProps {
   icon: LucideIcon;
@@ -9,8 +10,15 @@ interface FeatureCardProps {
 }
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
+
   return (
-    <Card className="group h-full bg-card border-border rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-2">
+    <Card 
+      ref={ref}
+      className={`group h-full bg-card border-border rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-700 hover:-translate-y-2 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <CardContent className="p-8 flex flex-col h-full">
         {/* Icon */}
         <div className="mb-6">
