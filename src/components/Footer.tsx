@@ -11,13 +11,12 @@ const Footer = () => {
               color: 'rgb(234, 216, 188)'
             }}
           >
-            Handmade
+            TwinHooks
           </div>
 
           {/* Copyright */}
           <p className="text-sm" style={{ color: 'rgb(209, 213, 219)' }}>
-            © {new Date().getFullYear()} Handmade Crochet Artisan. All rights
-            reserved.
+            © {new Date().getFullYear()} TwinHooks. All rights reserved.
           </p>
         </div>
       </div>

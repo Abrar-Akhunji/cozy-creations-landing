@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-              Handmade
+              TwinHooks
               <br />
               Knitted Products
             </h1>

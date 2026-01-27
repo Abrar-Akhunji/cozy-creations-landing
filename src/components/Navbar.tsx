@@ -35,7 +35,7 @@ const Navbar = () => {
             className="text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors"
             style={{ fontFamily: "'Poppins', cursive" }}
           >
-            Handmade
+             TwinHooks
           </button>
 
           {/* Navigation Links - Hidden on mobile */}
