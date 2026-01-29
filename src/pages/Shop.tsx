@@ -14,7 +14,7 @@ const Shop = () => {
   return (
     <div className="space-y-8">
       <header className="space-y-3">
-        <h1 className="text-5xl font-semibold tracking-tight">Shop</h1>
+        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">Shop</h1>
         <p className="text-muted-foreground max-w-2xl">
           Browse ready-to-order pieces and made-to-order designs.
         </p>
@@ -53,9 +53,9 @@ const Shop = () => {
         </aside>
 
         <section className="space-y-4">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
             <p className="text-sm text-muted-foreground">{products.length} products found</p>
-            <div className="rounded-full border border-border bg-card px-4 h-10 flex items-center text-sm shadow-card">
+            <div className="w-fit rounded-full border border-border bg-card px-4 h-10 flex items-center text-sm shadow-card">
               Sort: Featured
             </div>
           </div>

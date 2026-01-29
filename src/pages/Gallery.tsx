@@ -17,7 +17,9 @@ const Gallery = () => {
   return (
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <h1 className="text-5xl font-semibold tracking-tight">The Art of the Stitch</h1>
+        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+          The Art of the Stitch
+        </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Every loop tells a story. Explore textures, finishes, and custom work.
         </p>

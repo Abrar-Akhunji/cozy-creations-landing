@@ -4,7 +4,9 @@ const About = () => {
   return (
     <div className="space-y-10">
       <header className="space-y-3">
-        <h1 className="text-5xl font-semibold tracking-tight">About TwinHooks</h1>
+        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+          About TwinHooks
+        </h1>
         <p className="text-muted-foreground max-w-2xl">
           A small studio built around slow fashion, comfort, and clean finishing.
         </p>
