@@ -9,7 +9,6 @@ import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
-import Blog from "./pages/Blog";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
@@ -28,7 +27,6 @@ const App = () => (
             <Route path="/cart" element={<Cart />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<ContactPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

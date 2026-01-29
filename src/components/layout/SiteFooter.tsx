@@ -41,11 +41,6 @@ const SiteFooter = () => {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link className="hover:text-primary transition-colors" to="/blog">
-                  Blog
-                </Link>
-              </li>
             </ul>
           </div>
 
