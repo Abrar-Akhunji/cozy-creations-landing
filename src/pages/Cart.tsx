@@ -17,7 +17,7 @@ const Cart = () => {
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h1 className="text-5xl font-semibold tracking-tight">Your Shopping Bag</h1>
+        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">Your Shopping Bag</h1>
         <p className="text-muted-foreground">{items.length} items in your cart</p>
       </header>
 
@@ -26,12 +26,12 @@ const Cart = () => {
           {items.map((it) => (
             <div
               key={it.title}
-              className="rounded-2xl border border-border bg-card p-5 flex gap-5 shadow-card"
+              className="rounded-2xl border border-border bg-card p-5 flex flex-col sm:flex-row gap-5 shadow-card"
             >
               <img
                 src={it.img}
                 alt={it.title}
-                className="size-24 rounded-2xl object-cover"
+                className="w-full sm:size-24 rounded-2xl object-cover"
                 loading="lazy"
               />
 
@@ -52,7 +52,7 @@ const Cart = () => {
                   </button>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between">
+                <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <p className="font-semibold">{it.price}</p>
                   <div className="rounded-full border border-border bg-background px-2 h-10 flex items-center gap-3">
                     <button className="w-8 h-8 rounded-full bg-card" type="button">
@@ -69,7 +69,7 @@ const Cart = () => {
           ))}
         </section>
 
-        <aside className="rounded-2xl border border-border bg-card p-6 space-y-6 shadow-card">
+        <aside className="rounded-2xl border border-border bg-card p-5 sm:p-6 space-y-6 shadow-card">
           <h2 className="text-2xl font-semibold">Order Summary</h2>
 
           <div className="space-y-3 text-sm">
@@ -92,7 +92,7 @@ const Cart = () => {
             <span className="text-3xl font-semibold">₹2,477</span>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input
               className="h-11 flex-1 rounded-full border border-border bg-background px-4 text-sm"
               placeholder="Promo code"

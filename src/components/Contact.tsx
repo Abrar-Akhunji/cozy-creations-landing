@@ -37,7 +37,8 @@ const Contact = () => {
         backgroundImage: `linear-gradient(rgba(46, 42, 38, 0.92), rgba(46, 42, 38, 0.92)), url(${darkYarnBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        // NOTE: fixed backgrounds are janky on many mobile browsers
+        backgroundAttachment: "scroll",
       }}
     >
       <div className="max-w-content mx-auto px-6 md:px-12">

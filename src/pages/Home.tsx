@@ -26,7 +26,7 @@ const Home = () => {
           <p className="text-sm font-medium tracking-wider uppercase text-muted-foreground">
             Premium handmade crochet
           </p>
-          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
             Handcrafted <span className="text-primary">Warmth</span>
             <br />
             by TwinHooks
@@ -133,7 +133,7 @@ const Home = () => {
 
       {/* CURATED GALLERY */}
       <section className="space-y-6">
-        <div className="flex items-end justify-between gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6">
           <div className="space-y-2">
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               Curated Gallery

@@ -9,7 +9,7 @@ const ContactPage = () => {
   return (
     <div className="space-y-10">
       <header className="space-y-3">
-        <h1 className="text-5xl font-semibold tracking-tight">Contact</h1>
+        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">Contact</h1>
         <p className="text-muted-foreground max-w-2xl">
           Reach out for custom sizes, colors, gifting, or bulk orders.
         </p>
