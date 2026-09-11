@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    watch: {
+      ignored: ["**/graphify-out/**"],
+    },
     hmr: {
       overlay: false,
     },
@@ -16,6 +19,20 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    // Warn on chunks >500KB
+    chunkSizeWarningLimit: 500,
+    rollupOptions: {
+      output: {
+        // Split vendor libraries for better caching
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "firebase-vendor": ["firebase/app", "firebase/firestore", "firebase/auth"],
+          "ui-vendor": ["@radix-ui/react-dialog", "@radix-ui/react-tooltip", "sonner"],
+        },
+      },
     },
   },
 }));

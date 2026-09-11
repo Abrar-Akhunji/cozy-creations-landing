@@ -1,0 +1,23 @@
+# Admin Panel gitignore
+node_modules
+dist
+dist-ssr
+*.local
+
+# ── Environment & Secrets — NEVER commit these ────────────────────
+.env
+.env.*
+!.env.example
+*cloudinary-config.php
+!*cloudinary-config.php.example
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -14,8 +14,8 @@
     --popover: 39 50% 97%;
     --popover-foreground: 25 12% 17%;
 
-    /* Hybrid palette: warm base + subtle teal accent */
-    --primary: 188 78% 42%; /* teal accent */
+    /* Brand palette: warm base + brand rose-pink logo match */
+    --primary: 352 65% 60%; /* rose pink */
     --primary-foreground: 39 50% 97%;
 
     --secondary: 30 24% 50%; /* #8B6F54 Soft Brown */
@@ -46,7 +46,7 @@
     --foreground: 39 50% 97%;
     --card: 25 18% 15%;
     --card-foreground: 39 50% 97%;
-    --primary: 30 32% 55%;
+    --primary: 352 75% 70%;
     --primary-foreground: 39 50% 97%;
     --secondary: 30 24% 50%;
     --secondary-foreground: 39 50% 97%;
@@ -66,7 +66,8 @@
     @apply bg-background text-foreground;
     font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
   }
   
   html {
@@ -74,23 +75,64 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
-    line-height: 1.3;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
   }
   
   h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.75rem, 6vw, 4.25rem);
     font-weight: 600;
   }
   
   h2 {
-    font-size: clamp(2rem, 4vw, 2.25rem);
+    font-size: clamp(2.25rem, 5vw, 3rem);
     font-weight: 500;
   }
   
   h3 {
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(1.35rem, 3.5vw, 1.75rem);
     font-weight: 500;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.08);
   }
 }
 
@@ -105,5 +147,29 @@
   
   .shadow-hover {
     box-shadow: var(--shadow-hover);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 8s ease-in-out infinite;
+  }
+
+  .font-serif-luxury {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-sans-modern {
+    font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
   }
 }

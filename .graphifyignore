@@ -1,0 +1,44 @@
+# Graphify ignore file
+# Exclude build products, dependencies, system files, and local logs from codebase index
+
+# Dependencies
+node_modules/
+bower_components/
+jspm_packages/
+web_modules/
+vendor/
+
+# Build and Distribution directories
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+tmp/
+temp/
+
+# IDEs, OS files, and Tools
+.git/
+.svn/
+.hg/
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+.lovable/
+scratch/
+
+# Package manager files not needed for logic/architecture understanding
+package-lock.json
+bun.lockb
+yarn.lock
+pnpm-lock.yaml
+
+# Graphify output itself (to prevent self-reference loop)
+graphify-out/

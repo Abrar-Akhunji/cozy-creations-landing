@@ -4,14 +4,12 @@ const Footer = () => {
       <div className="max-w-content mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <div
-            className="text-xl font-semibold"
-            style={{ 
-              fontFamily: "'Poppins', cursive",
-              color: 'rgb(234, 216, 188)'
-            }}
-          >
-            TwinHooks
+          <div>
+            <img
+              src="/Instagram%20post%20-%201.png"
+              alt="TwinHooks Logo"
+              className="h-10 w-auto brightness-0 invert"
+            />
           </div>
 
           {/* Copyright */}

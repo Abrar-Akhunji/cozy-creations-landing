@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #0c0d12;
+    color: #e8e6e3;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* Custom Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0d0e12;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 99px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(21, 23, 32, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(25, 28, 40, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f3f4f6;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(217, 119, 6, 0.6);
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+  outline: none;
+}
+
+/* ── Color Tokens & System Classes for Krashe Admin ── */
+:root {
+  --admin-bg: #0c0d12;
+  --admin-bg-subtle: #101118;
+  --admin-surface: #1a1c27;
+  --admin-surface-elevated: rgba(34, 36, 49, 0.80);
+  --admin-border: #2a2d3a;
+  --admin-border-subtle: #1e2030;
+  --admin-accent: #d97706;
+  --admin-accent-hover: #e5880a;
+  --admin-accent-muted: rgba(217, 119, 6, 0.15);
+  --admin-accent-glow: rgba(217, 119, 6, 0.12);
+  --admin-text: #e8e6e3;
+  --admin-text-secondary: #9ca3af;
+  --admin-text-muted: #6b7280;
+  --admin-success: #22c55e;
+  --admin-success-muted: rgba(34, 197, 94, 0.15);
+  --admin-danger: #ef4444;
+  --admin-danger-muted: rgba(239, 68, 68, 0.12);
+  --admin-warning: #f59e0b;
+  --admin-warning-muted: rgba(245, 158, 11, 0.15);
+}
+
+/* Scoped classes to style standard elements inside pages */
+.admin-dark {
+  color: var(--admin-text);
+  background: var(--admin-bg);
+}
+
+/* ── Glassmorphic Card ── */
+.admin-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.admin-card-elevated {
+  background: var(--admin-surface-elevated);
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Inputs ── */
+.admin-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+  background: var(--admin-bg-subtle);
+  color: var(--admin-text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-input:focus {
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px var(--admin-accent-glow);
+}
+
+.admin-input::placeholder {
+  color: var(--admin-text-muted);
+}
+
+.admin-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+  background: var(--admin-bg-subtle);
+  color: var(--admin-text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-textarea:focus {
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px var(--admin-accent-glow);
+}
+
+.admin-textarea::placeholder {
+  color: var(--admin-text-muted);
+}
+
+.admin-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+  background: var(--admin-bg-subtle);
+  color: var(--admin-text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-select:focus {
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px var(--admin-accent-glow);
+}
+
+.admin-select option {
+  background: var(--admin-surface);
+  color: var(--admin-text);
+}
+
+/* ── Buttons ── */
+.admin-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 12px;
+  border: none;
+  background: var(--admin-accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.admin-btn-primary:hover {
+  background: var(--admin-accent-hover);
+  box-shadow: 0 4px 20px var(--admin-accent-glow);
+}
+
+.admin-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.admin-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--admin-border);
+  background: transparent;
+  color: var(--admin-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.admin-btn-ghost:hover {
+  background: var(--admin-surface);
+  color: var(--admin-text);
+  border-color: var(--admin-border);
+}
+
+.admin-btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--admin-danger);
+  background: var(--admin-danger-muted);
+  color: var(--admin-danger);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.admin-btn-danger:hover {
+  background: rgba(239, 68, 68, 0.22);
+}
+
+.admin-btn-danger:active {
+  transform: scale(0.97);
+}
+
+/* ── Status Badges ── */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-badge-pending {
+  background: var(--admin-warning-muted);
+  color: var(--admin-warning);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.admin-badge-completed {
+  background: var(--admin-success-muted);
+  color: var(--admin-success);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.admin-badge-cancelled {
+  background: var(--admin-danger-muted);
+  color: var(--admin-danger);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* ── Checkbox ── */
+.admin-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--admin-border);
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.admin-checkbox.checked {
+  background: var(--admin-accent);
+  border-color: var(--admin-accent);
+}
+
+/* ── Utility ── */
+.admin-text-accent {
+  color: var(--admin-accent);
+}
+
+.admin-font-mono {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+.admin-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--admin-text-muted);
+  margin-bottom: 6px;
+}
+
+/* Animations */
+@keyframes admin-fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-animate-fade-in-up {
+  animation: admin-fade-in-up 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}

@@ -1,0 +1,10 @@
+<?php
+/**
+ * Twin Hooks — Cloudinary Server Configuration Template
+ * =====================================================
+ * Copy this file to cloudinary-config.php and insert your real credentials.
+ * NEVER commit cloudinary-config.php to git.
+ */
+define('CLOUDINARY_API_SECRET', 'your_cloudinary_api_secret_here');
+define('CLOUDINARY_API_KEY',    'your_cloudinary_api_key_here');
+define('CLOUDINARY_FOLDER',     'products');

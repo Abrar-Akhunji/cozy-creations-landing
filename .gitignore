@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# ── Environment & Secrets — NEVER commit these ────────────────────
+.env
+.env.*
+!.env.example
+*cloudinary-config.php
+!*cloudinary-config.php.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +29,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Scratch / temp
+scratch/
+
+# Graphify build cache
+graphify-out/cache/
